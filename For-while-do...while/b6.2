@@ -1,0 +1,27 @@
+// Kiểm tra 1 số có phải số hoàn hảo không
+#include <stdio.h>
+
+int isPerfect(int n) {
+    int sum = 1;
+    int i;
+    for (i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            sum += i;
+            if (i != n / i) sum += n / i;
+        }
+    }
+    return sum == n;
+}
+
+int main() {
+    int n;
+    printf("Nhap so: ");
+    scanf("%d", &n);
+
+    if (isPerfect(n))
+        printf("%d là so hoan hao.\n", n);
+    else
+        printf("%d khong phai là so hoan hao.\n", n);
+
+    return 0;
+}
