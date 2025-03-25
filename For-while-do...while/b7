@@ -1,0 +1,18 @@
+// Tính S=1+1/2+1/3+...+1/N
+#include <stdio.h>
+
+int main() {
+    int n;
+    double sum = 0;
+    
+    printf("Nhap n: ");
+    scanf("%d", &n);
+
+    int i;
+	for ( i = 1; i <= n; i++) {
+        sum += 1.0 / i;
+    }
+
+    printf("Tong S = %.2lf\n", sum);
+    return 0;
+}
