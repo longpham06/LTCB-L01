@@ -1,0 +1,42 @@
+// Đổi số n từ cơ số 10 sang cơ số 2, 8, 16
+#include <stdio.h>
+
+void convertToBase(int num, int base) {
+    if (num == 0) {
+        printf("0");
+        return;
+    }
+    
+    char result[32];
+    int index = 0;
+    char digits[] = "0123456789ABCDEF";
+    
+    while (num > 0) {
+        result[index++] = digits[num % base];
+        num /= base;
+    }
+    int i;
+    for (i = index - 1; i >= 0; i--) {
+        printf("%c", result[i]);
+    }
+}
+
+int main() {
+    int num;
+    printf("Nhập số nguyên hệ 10: ");
+    scanf("%d", &num);
+    
+    printf("Hệ nhị phân (2): ");
+    convertToBase(num, 2);
+    printf("\n");
+    
+    printf("Hệ bát phân (8): ");
+    convertToBase(num, 8);
+    printf("\n");
+    
+    printf("Hệ thập lục phân (16): ");
+    convertToBase(num, 16);
+    printf("\n");
+    
+    return 0;
+}
