@@ -1,0 +1,11 @@
+// In ra các số dương chẵn từ 1 đến 20 trên cùng 1 dòng
+#include <stdio.h>
+
+int main() {
+    int i;
+	for (i = 1; i <= 20; i++) {
+        printf("%d\t", i);
+    }
+    printf("\n");
+    return 0;
+}
