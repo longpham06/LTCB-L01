@@ -1,0 +1,13 @@
+// Tính tổng 10 số nguyên bất kì được nhập từ bàn phím
+#include <stdio.h>
+int main() {
+    int sum = 0, num;
+    int i;
+    for (i = 0; i < 10; i++) {
+        printf("Nhap so thu %d: ", i + 1);
+        scanf("%d", &num);
+        sum += num;
+    }
+    printf("Tong cua 10 so là: %d\n", sum);
+    return 0;
+}
