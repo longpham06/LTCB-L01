@@ -1,0 +1,38 @@
+#include <stdio.h>
+#define SIZE 3
+
+void printMatrix(int matrix[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    // Trường hợp 1: Khai báo mảng với giá trị cố định
+    int matrix1[SIZE][SIZE] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    printf("Ma tran (truong hop 1 - gia tri co dinh):\n");
+    printMatrix(matrix1);
+
+    // Trường hợp 2: Nhập giá trị từ bàn phím
+    int matrix2[SIZE][SIZE];
+    printf("\nNhap gia tri cho ma tran 3x3:\n");
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("Nhap phan tu matrix[%d][%d]: ", i, j);
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+
+    printf("\nMa tran (truong hop 2 - nhap tu ban phim):\n");
+    printMatrix(matrix2);
+
+    return 0;
+}
