@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Nhap so luong phan tu cua mang: ");
+    scanf("%d", &n);
+
+    int a[n];
+    printf("Nhap cac phan tu cua mang:\n");
+    for (int i = 0; i < n; i++) {
+        printf("a[%d] = ", i);
+        scanf("%d", &a[i]);
+    }
+
+    int tong = 0, tongDuong = 0, tongAm = 0;
+    int demDuong = 0, demAm = 0;
+
+    for (int i = 0; i < n; i++) {
+        tong += a[i];
+        if (a[i] > 0) {
+            tongDuong += a[i];
+            demDuong++;
+        } else if (a[i] < 0) {
+            tongAm += a[i];
+            demAm++;
+        }
+    }
+
+    printf("\nTong tat ca cac phan tu: %d", tong);
+    printf("\nTong cac so duong: %d", tongDuong);
+    printf("\nTong cac so am: %d", tongAm);
+
+    float tbc = (float)tong / n;
+    float tbcDuong = demDuong > 0 ? (float)tongDuong / demDuong : 0;
+    float tbcAm = demAm > 0 ? (float)tongAm / demAm : 0;
+
+    printf("\nTrung binh cong cua ca mang: %.2f", tbc);
+    printf("\nTrung binh cong cac so duong: %.2f", tbcDuong);
+    printf("\nTrung binh cong cac so am: %.2f\n", tbcAm);
+
+    return 0;
+}
