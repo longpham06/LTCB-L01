@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Nhap kich thuoc ma tran n x n: ");
+    scanf("%d", &n);
+
+    int a[n][n];
+    int value = 1;
+    int hangDau = 0, hangCuoi = n - 1;
+    int cotDau = 0, cotCuoi = n - 1;
+
+    while (hangDau <= hangCuoi && cotDau <= cotCuoi) {
+        // 1. In hàng trên cùng từ trái sang phải
+        for (int i = cotDau; i <= cotCuoi; i++)
+            a[hangDau][i] = value++;
+        hangDau++;
+
+        for (int i = hangDau; i <= hangCuoi; i++)
+            a[i][cotCuoi] = value++;
+        cotCuoi--;
+
+        if (hangDau <= hangCuoi) {
+            for (int i = cotCuoi; i >= cotDau; i--)
+                a[hangCuoi][i] = value++;
+            hangCuoi--;
+        }
+
+        if (cotDau <= cotCuoi) {
+            for (int i = hangCuoi; i >= hangDau; i--)
+                a[i][cotDau] = value++;
+            cotDau++;
+        }
+    }
+
+    printf("Ma tran xoan oc %dx%d:\n", n, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%3d ", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
