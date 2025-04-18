@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+double power(double x, int y) {
+    double result = 1;
+    for(int i = 0; i < y; i++) {
+        result *= x;
+    }
+    return result;
+}
+
+int main() {
+    double x;
+    int y;
+
+    printf("Nhap co so x: ");
+    scanf("%lf", &x);
+
+    printf("Nhap so mu y: ");
+    scanf("%d", &y);
+
+    double ketQua = power(x, y);
+    printf("Gia tri cua %.2lf^%d la: %.2lf\n", x, y, ketQua);
+
+    return 0;
+}
